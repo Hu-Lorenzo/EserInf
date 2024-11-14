@@ -7,6 +7,16 @@ def _aggiungiElementi():
         spesa.append(elementi)
 def _stampaElementi():
         print(spesa)
+def _eliminaElementi():
+    _stampaElementi()
+    n = int(input("Quale elementi di spesa vuoi eliminare "))
+    if n == 1 :
+        n = 0
+    spesa.pop(n)
+    _stampaElementi()
+    
 _aggiungiElementi()
 _stampaElementi()
+_eliminaElementi()
+
 
