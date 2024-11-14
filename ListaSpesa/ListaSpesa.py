@@ -17,6 +17,11 @@ def eliminaElementi():
 
 
 while z != 0 :
+    print("N'0 Esci dal comando")
+    print("N'1 comando per aggiungere elemento")
+    print("N'2 comando per stampare elemento")
+    print("N'3 comando per eliminare elemento")
+    z = int(input("Seleziona numero di comando: "))
     if z == 1:
         aggiungiElementi()
     if z == 2:
@@ -24,7 +29,7 @@ while z != 0 :
     if z == 3:
         eliminaElementi()
     if z == 0:
-        
+       break 
     
 
 
