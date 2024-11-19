@@ -3,8 +3,24 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista della Spesa</title>
     </head>
     <body>
-        <h1>Per ora funziona tutto!</h1>
+        <!--creare un if che fa visualizzare la lista-->
+        <h1>La tua Lista della Spesa</h1>
+        {% if spesa %}
+            <ul>
+                {% for elemento in spesa %}
+                    <li>{{ elemento }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>La lista è vuota.</p>
+        {% endif %}
+        <form action="/aggiungi" method="post">
+            <input type="text" name="elemento" placeholder="Aggiungi un elemento"
+            required>
+            <button type="submit">Aggiungi</button>
+            </form>
     </body>
 </html>
