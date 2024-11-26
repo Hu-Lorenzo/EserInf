@@ -1,26 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../static/css/stile.css">
         <title>Lista della Spesa</title>
     </head>
     <body>
-        <!--creare un if che fa visualizzare la lista-->
         <h1>La tua Lista della Spesa</h1>
+        
+        <!-- Controllo condizionale per verificare se la lista contiene elementi -->
         {% if spesa %}
             <ul>
                 {% for elemento in spesa %}
-                    <li>{{ elemento }}</li>
+                    <li>
+                        {{ elemento }} 
+                        <!-- Aggiungi un link per rimuovere l'elemento -->
+                        <a href="{{ url_for('rimuovi', indice=loop.index0) }}">Rimuovi</a>
+                    </li>
                 {% endfor %}
             </ul>
         {% else %}
             <p>La lista è vuota.</p>
         {% endif %}
+
+        <!-- Modulo per aggiungere un elemento alla lista -->
         <form action="/aggiungi" method="post">
-            <input type="text" name="elemento" placeholder="Aggiungi un elemento"
-            required>
+            <input type="text" name="elemento" placeholder="Aggiungi un elemento" required>
             <button type="submit">Aggiungi</button>
-            </form>
+        </form>
     </body>
 </html>
