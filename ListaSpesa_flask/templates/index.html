@@ -16,7 +16,7 @@
                 <li>
                     {{ elemento.elemento }}  <!-- Mostra l'elemento della lista -->
                     <form action="/rimuovi/{{ elemento.id }}" method="post" style="display:inline;">
-                        <button type="submit">Rimuovi</button>
+                        <button class="Rbotton" type="submit">Rimuovi</button>
                     </form>
                 </li>
                 {% endfor %}
@@ -34,7 +34,7 @@
 
         <!-- Bottone per svuotare la lista -->
         <form action="/svuota" method="post">
-            <button type="submit">Svuota tutta la lista</button>
+            <button type="submit" class="Rbotton">Svuota tutta la lista</button>
         </form>
     </body>
 </html>

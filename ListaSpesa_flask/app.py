@@ -1,12 +1,12 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
-from models import db, ListaSpesa  # Importa db e ListaSpesa dal file models
+from models import db, ListaSpesa 
 
 app = Flask(__name__)
-# Configurazione del database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///lista_spesa.db'  # Percorso del database SQLite
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # Disabilita il tracking delle modifiche
 
-# Inizializza SQLAlchemy con l'app
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///lista_spesa.db'  
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  
+
+
 db.init_app(app)
 
 # Crea il database (se non esiste) all'avvio dell'app
