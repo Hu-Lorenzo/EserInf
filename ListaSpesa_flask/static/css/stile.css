@@ -64,8 +64,11 @@ form button {
     transition: background-color 0.3s ease;
     border: none;
 }
+.Rbotton:hover {
+    background-color: #b44c4c;
+}
 
-form button:hover {
+button:hover {
     background-color: #7b9159;
 }
 
